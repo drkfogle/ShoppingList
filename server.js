@@ -27,7 +27,8 @@ if (process.env.NODE_ENV === "production") {
   directives: {
     imgSrc: ["'self'" ],
     defaultSrc: ["'self'"],
-    styleSrc: ["'self'"]
+    styleSrc: ["'self'"],
+    fontSrc: ["'self'"]
   }
 }))
 
