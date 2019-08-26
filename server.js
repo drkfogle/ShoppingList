@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
 const items = require("./Routes/api/items");
+const csp = require('helmet-csp');
 
 const app = express();
 
@@ -22,6 +23,13 @@ app.use("/api/items", items);
 //this sets static assets if in production
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
+  app.use(csp({
+  directives: {
+    imgSrc: ["'self'" ],
+    defaultSrc: ["'self'"],
+    styleSrc: ["'self'"]
+  }
+}))
 
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "public", "index.html"));
