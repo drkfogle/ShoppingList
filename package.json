@@ -4,7 +4,8 @@
   "description": "Learning the MERN Stack",
   "main": "server.js",
   "engines": {
-    "npm": "6.10.1"
+    "npm": "6.10.1",
+    "node": "12.4.0"
   },
   "scripts": {
     "client-install": "npm install --prefix client",
